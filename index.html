@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,500&display=swap" rel="stylesheet">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                background: rgb(10,10,10);
+                color: #eed5b7;
+                font-family: 'Poppins', sans-serif;
+                font-weight: 300;
+            }
+            div {
+                padding: 2rem;
+            }
+            h1 {
+              font-weight: 500;
+              font-style: italic;
+              font-size: calc(2rem + 10vw);
+              padding: 2rem 0 2rem 0;
+            }
+            p {
+                padding: 1rem 0;
+                color: white;
+                font-size: 20px;
+            }
+            @media (min-width: 800px) {
+                p {
+                    max-width: 60%;
+                }
+            }
+        </style>
+
+        <title>Clase dos</title>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js"
+            integrity="sha512-NxocnqsXP3zm0Xb42zqVMvjQIktKEpTIbCXXyhBPxqGZHqhcOXHs4pXI/GoZ8lE+2NJONRifuBpi9DxC58L0Lw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+    </head>
+
+    <body>
+        <!--comentario-->
+
+        <div>
+            <h1><span id="saludo"></span> me llamo <span id="nombre"></span></h1>
+            <p>Tomé el curso porque me gusta la programación y
+              ya había tomado otros cursos de HTML. Me entretiene
+              mucho hacer páginas y además me gustan los juegos de computador,
+              me gusta algún día poder programar un juego. </p>
+            <p>Vine a la segunda clase porque es lo que el deber dicta.
+               Es lo responsable, además quiero aprender y no perderme
+               en la clase 03. </p>
+        </div>
+
+        <script>
+            var opciones = ["Hola,","Buena,","Qué pasa,","Good Morning,"];
+            function setup() {
+                createCanvas(windowWidth - 40, windowHeight - 40)
+                    .position(20, 20)
+                    .style("z-index", -1); /*-1 es el estilo "de fondo"*/
+                document.getElementById("nombre").textContent += "Danet";
+                document.getElementById("saludo").textContent += random(opciones);
+
+            }
+
+            function draw() {
+                background(0,0,0);
+                textSize (75);
+                text("🐥", mouseX,mouseY);
+                fill(20);
+                ellipse(mouseX+50,mouseY+50, 100,10)
+
+
+
+
+            }
+            function windowResized() {
+                resizeCanvas(windowWidth - 40, windowHeight - 40);
+            }
+        </script>
+    </body>
+</html>
